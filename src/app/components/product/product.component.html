@@ -1,0 +1,26 @@
+<div class="mb-3">
+    <label for="filtre" class="form-label">Aramak istediğiniz Ürünü Yazınız.</label>
+    <input type="text" class="form-control" [(ngModel)]="filtre" id="filtre"
+        placeholder="Aramak istediğiniz Ürünü Yazınız.">
+</div>
+<div class="alert alert-success">{{filtre}} aradınız.</div>
+<table class="table">
+<thead>
+<tr>
+    <th>Id</th>
+    <th>Ürün Adı</th>
+    <th>Ürün Değeri $</th>
+    <th>Ürün Değeri TL</th>
+    <th>Kategori Id</th>
+</tr>
+</thead>
+<tbody>
+    <tr *ngFor="let product of products |filterText:filtre">
+        <td>{{product.productId}}</td>
+        <td>{{product.productName |uppercase}}</td>
+        <td>{{product.unitPrice |currency}}</td>
+        <td>{{product.unitPrice |vatAdded |currency :"TRY":"TR"}}</td>
+        <td>{{product.categoryId}}</td>
+    </tr>
+</tbody>
+</table>

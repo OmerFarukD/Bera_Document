@@ -1,0 +1,28 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Giriş Yap</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="loginForm">
+                    <div class="form-group">
+                        <div class="mb-3">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" formControlName="email" class="form-control"
+                                placeholder="email" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="password">Password</label>
+                            <input type="text" id="password" formControlName="password" class="form-control"
+                                placeholder="password" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="button" class="btn btn-primary" (click)="login()">Giriş Yap</button>
+            </div>
+        </div>
+    </div>
+</div>
